@@ -1,4 +1,4 @@
-# Microfrontends Angular 12
+# Microfrontends Angular 
 
 This project shows an example of using Webpack 5 Module Federation with Angular v11-next.5, note the use of **yarn**, this is required to override the webpack version for the angular cli
 
