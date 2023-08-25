@@ -4,9 +4,9 @@ const crypto = require("crypto");
 const crypto_orig_createHash = crypto.createHash;
 crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);
 
-module.exports = {
+module.exports = (_,argv) => ({
   output: {
-    publicPath: 'http://localhost:4201/',
+    publicPath: argv.mode === 'development' ? 'http://localhost:4201/' : 'https://mfedemo3.vercel.app/',
     uniqueName: 'mdmfprofile',
   },
   optimization: {
@@ -27,4 +27,4 @@ module.exports = {
       },
     }),
   ],
-};
+});
